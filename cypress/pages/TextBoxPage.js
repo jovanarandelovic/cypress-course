@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import TextBoxElements from "../elements/text.box.page.elements"
+import TextBoxElements from "../elements/textbox.page.elements"
 const faker = require('@faker-js/faker');
 
 const userName = faker.faker.name.findName();
@@ -17,13 +17,22 @@ export default class TextBoxPage {
         cy.get('.text').contains('Text Box').click();
     }
 
-    getPageHeather() {
+    // getPageHeader() {
+    //     return cy.get(this.pageElements.header);
+    // }
+
+    getPageHeader() {
         return cy.get('.main-header');
     }
     
+    // getFullNameInput() {
+    //     return cy.get(this.pageElements.inputUserName);
+    // }
+
     getFullNameInput() {
         return cy.get('input[id="userName"]');
     }
+
 
     getEmialInput() {
         return cy.get('input[id="userEmail"]');
@@ -46,13 +55,10 @@ export default class TextBoxPage {
     }
 
     verifyThatHeatherIsDisplayed() {
-        this.getPageHeather().should('contain.text', 'Text Box');
+        this.getPageHeader().should('contain.text', 'Text Box');
     }
 
     fillInForm() {
-
-
-
         this.getFullNameInput().type(userName);
         this.getEmialInput().type(email);
         this.getCurrentAddressInput().type(currentAddress);
@@ -61,10 +67,10 @@ export default class TextBoxPage {
     }
     
     verifyThatFormIsSumbmited() {
-    this.getResults().should('contain', `${userName}`);
-    this.getResults().should('contain', `${email}`);
-    this.getResults().should('contain', `${currentAddress}`);
-    this.getResults().should('contain', `${permanentAddress}`);
+        this.getResults().should('contain', `${userName}`);
+        this.getResults().should('contain', `${email}`);
+        this.getResults().should('contain', `${currentAddress}`);
+        this.getResults().should('contain', `${permanentAddress}`);
     }
 
 }

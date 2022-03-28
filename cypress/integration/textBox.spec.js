@@ -15,11 +15,7 @@ describe ('Should test TextBox', () => {
     })
 
     it('Should test that the form was submited', () => {
-     
-
         textBox.fillInForm();
-
         textBox.verifyThatFormIsSumbmited();
-
     })
 })
