@@ -41,6 +41,13 @@ export default class TextBoxPage {
 
     verifyThatHeatherIsDisplayed() {
         this.getPageHeather().should('contain.text', 'Text Box');
-
     }
+
+    verifyThatFormIsSumbmited() {
+    this.getResults.should('contain', `${userName}`);
+    this.getResults.should('contain', `${email}`);
+    this.getResults.should('contain', `${currentAddress}`);
+    this.getResults.should('contain', `${permanentAddress}`);
+    }
+
 }
