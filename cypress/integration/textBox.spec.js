@@ -9,8 +9,8 @@ describe ('Should test TextBox', () => {
     textBox.visitTextBox();
     })
 
-    it('Should verify that the heather is displayed', () => {
-        textBox.verifyThatHeatherIsDisplayed();
+    it('Should verify that the header is displayed', () => {
+        textBox.verifyThatHeaderIsDisplayed();
 
     })
 

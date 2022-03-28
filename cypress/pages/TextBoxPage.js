@@ -54,7 +54,7 @@ export default class TextBoxPage {
         return cy.get('div[class="border col-md-12 col-sm-12"]');
     }
 
-    verifyThatHeatherIsDisplayed() {
+    verifyThatHeaderIsDisplayed() {
         this.getPageHeader().should('contain.text', 'Text Box');
     }
 
