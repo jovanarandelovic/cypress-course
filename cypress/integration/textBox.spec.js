@@ -14,20 +14,10 @@ describe ('Should test TextBox', () => {
 
     })
 
-    it('Should test that the form was submited', (userName, email, currentAddress, permanebtAddress) => {
-       // const faker = require('@faker-js/faker');
+    it('Should test that the form was submited', () => {
+     
 
-        // const userName = faker.faker.name.findName();
-        // const email = faker.faker.internet.email();
-        // const currentAddress = faker.faker.address.streetAddress();
-        // const permanentAddress = faker.faker.address.streetAddress();
-
-         userName = "random";
-
-        textBox.getEmialInput().type(userName);
-        textBox.getCurrentAddressInput.type(currentAddress);
-        textBox.getPermAddressInput.type(permanentAddress);
-        textBox.getSubmitButton().click();
+        textBox.fillInForm();
 
         textBox.verifyThatFormIsSumbmited();
 

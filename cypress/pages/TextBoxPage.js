@@ -1,5 +1,11 @@
 /// <reference types="cypress" />
 import TextBoxElements from "../elements/text.box.page.elements"
+const faker = require('@faker-js/faker');
+
+const userName = faker.faker.name.findName();
+const email = faker.faker.internet.email();
+const currentAddress = faker.faker.address.streetAddress();
+const permanentAddress = faker.faker.address.streetAddress();
 
 export default class TextBoxPage {
     textBox() {
@@ -43,11 +49,22 @@ export default class TextBoxPage {
         this.getPageHeather().should('contain.text', 'Text Box');
     }
 
+    fillInForm() {
+
+
+
+        this.getFullNameInput().type(userName);
+        this.getEmialInput().type(email);
+        this.getCurrentAddressInput().type(currentAddress);
+        this.getPermAddressInput().type(permanentAddress);
+        this.getSubmitButton().click();
+    }
+    
     verifyThatFormIsSumbmited() {
-    this.getResults.should('contain', `${userName}`);
-    this.getResults.should('contain', `${email}`);
-    this.getResults.should('contain', `${currentAddress}`);
-    this.getResults.should('contain', `${permanentAddress}`);
+    this.getResults().should('contain', `${userName}`);
+    this.getResults().should('contain', `${email}`);
+    this.getResults().should('contain', `${currentAddress}`);
+    this.getResults().should('contain', `${permanentAddress}`);
     }
 
 }
