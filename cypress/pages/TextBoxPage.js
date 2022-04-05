@@ -27,7 +27,7 @@ export default class TextBoxPage {
     }
 
 
-    getEmialInput() {
+    getEmailInput() {
         return cy.get(this.pageElements.inputEmail);
     }
 
@@ -53,7 +53,7 @@ export default class TextBoxPage {
 
     fillInForm() {
         this.getFullNameInput().type(userName);
-        this.getEmialInput().type(email);
+        this.getEmailInput().type(email);
         this.getCurrentAddressInput().type(currentAddress);
         this.getPermAddressInput().type(permanentAddress);
         this.getSubmitButton().click();
