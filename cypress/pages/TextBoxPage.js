@@ -8,7 +8,7 @@ const currentAddress = faker.faker.address.streetAddress();
 const permanentAddress = faker.faker.address.streetAddress();
 
 export default class TextBoxPage {
-    textBox() {
+    constructor() {
         this.pageElements = new TextBoxElements();
     }
 
@@ -17,41 +17,34 @@ export default class TextBoxPage {
         cy.get('.text').contains('Text Box').click();
     }
 
-    // getPageHeader() {
-    //     return cy.get(this.pageElements.header);
-    // }
-
     getPageHeader() {
-        return cy.get('.main-header');
+        return cy.get(this.pageElements.header);
     }
-    
-    // getFullNameInput() {
-    //     return cy.get(this.pageElements.inputUserName);
-    // }
 
+    
     getFullNameInput() {
-        return cy.get('input[id="userName"]');
+        return cy.get(this.pageElements.inputUserName);
     }
 
 
     getEmialInput() {
-        return cy.get('input[id="userEmail"]');
+        return cy.get(this.pageElements.inputEmail);
     }
 
     getCurrentAddressInput() {
-        return cy.get('textarea[id="currentAddress"]')
+        return cy.get(this.pageElements.currentAddressInput)
     }
 
     getPermAddressInput() {
-        return cy.get('textarea[id="permanentAddress"]');
+        return cy.get(this.pageElements.permAddressInput);
     }
 
     getSubmitButton() {
-        return cy.get('button[id="submit"]')
+        return cy.get(this.pageElements.submitButton)
     }
 
     getResults() {
-        return cy.get('div[class="border col-md-12 col-sm-12"]');
+        return cy.get(this.pageElements.results);
     }
 
     verifyThatHeaderIsDisplayed() {
