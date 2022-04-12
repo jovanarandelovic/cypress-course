@@ -1,16 +1,23 @@
 /// <reference types = "cypress" />
 
-import TextBoxPage from "../pages/TextBoxPage";
+import TextBoxPage from "../pages/elementsPage/TextBoxPage";
+
 const textBox = new TextBoxPage();
 
 describe ('Should test TextBox', () => {
     
     beforeEach('navigates to the Elements page and selects Text Box', () => {
-    textBox.visitTextBox();
+    textBox.visitElements();
+    
+    Cypress.on("uncaught:exception", (err, runnable) => {
+        return false;
+      });
+    
+      textBox.visitTextBox();
     })
 
     it('Should verify that the header is displayed', () => {
-        textBox.verifyThatHeaderIsDisplayed();
+       textBox.verifyThatHeaderIsDisplayed();
 
     })
 
